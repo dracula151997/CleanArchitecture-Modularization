@@ -12,11 +12,11 @@ abstract class AbstractUseCase<Request : AbstractUseCase.Request, Response : Abs
 ) {
 
     fun execute(request: Request) = process(request)
-        .map { Result.Success(it) as Result<Response> }
+        .map { NetworkResult.Success(it) as NetworkResult<Response> }
         .flowOn(dispatcher)
-        .onStart { Result.Loading }
+        .onStart { NetworkResult.Loading }
         .catch {
-            emit(Result.Error(it))
+            emit(NetworkResult.Error(it))
         }
 
     internal abstract fun process(request: Request): Flow<Response>
