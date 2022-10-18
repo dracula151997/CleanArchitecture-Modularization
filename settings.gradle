@@ -16,3 +16,4 @@ rootProject.name = "CleanArchitecture-Modularization"
 include ':app'
 include ':domain'
 include ':data-repository'
+include ':data-remote'

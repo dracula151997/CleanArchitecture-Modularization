@@ -28,7 +28,8 @@ buildscript {
                 espressoCore         : "3.4.0",
                 androidTestCore      : "1.4.0",
                 androidTestJunit     : "1.1.3",
-                orchestrator         : "1.4.1"
+                orchestrator         : "1.4.1",
+                okhttpLogging        : "4.10.0"
         ]
 
         gradleVersions = [
@@ -63,7 +64,8 @@ buildscript {
                 retrofit     : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
                 retrofitMoshi: "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
                 moshi        : "com.squareup.moshi:moshi:${versions.moshi}",
-                moshiKotlin  : "com.squareup.moshi:moshi-kotlin:${versions.moshi}"
+                moshiKotlin  : "com.squareup.moshi:moshi-kotlin:${versions.moshi}",
+                okhttpLogging: "com.squareup.okhttp3:logging-interceptor:${versions.okhttpLogging}"
         ]
         persistence = [
                 roomRuntime : "androidx.room:room-runtime:${versions.room}",
