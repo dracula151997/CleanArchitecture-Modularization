@@ -10,5 +10,5 @@ abstract class ResultConverter<T : Any, R : Any> {
         }
     }
 
-    abstract fun convertSuccess(data: T): R
+    protected abstract fun convertSuccess(data: T): R
 }

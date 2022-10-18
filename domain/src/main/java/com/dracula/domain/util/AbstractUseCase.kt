@@ -14,7 +14,6 @@ abstract class AbstractUseCase<Request : AbstractUseCase.Request, Response : Abs
     fun execute(request: Request) = process(request)
         .map { NetworkResult.Success(it) as NetworkResult<Response> }
         .flowOn(dispatcher)
-        .onStart { NetworkResult.Loading }
         .catch {
             emit(NetworkResult.Error(it))
         }
